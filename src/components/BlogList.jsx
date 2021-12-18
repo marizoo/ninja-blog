@@ -20,10 +20,7 @@ margin-bottom: 8px;
 `;
 
 
-
-
-
-const BlogList = ({blogs, title, handleDelete}) => {
+const BlogList = ({blogs, title}) => {
     return (
         <Container>
             <h2>{title}</h2>
@@ -31,7 +28,7 @@ const BlogList = ({blogs, title, handleDelete}) => {
                 <BlogPreview key={blog.id}>
                     <h2>{blog.title}</h2>
                     <p>Written by {blog.author}</p>
-                    <button onClick={ () => handleDelete(blog.id) } >delete blog</button>
+                    {/* <button onClick={ () => handleDelete(blog.id) } >delete blog</button> */}
                 </BlogPreview>
             ) )}
         </Container>
