@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 const Container = styled.nav`
 padding: 20px;
@@ -18,15 +19,13 @@ const Links = styled.div`
 margin-left: auto;
 `;
 
-const AA = styled.a`
-margin-left: 16px;
-text-decoration: none;
-padding: 6px;
-
-&:hover {
-    color: #f1356d;
+const linkStyle = {
+    marginLeft: "16px",
+    textDecoration: "none",
+    padding: "6px",
 }
-`
+
+
 
 
 const Navbar = () => {
@@ -34,15 +33,11 @@ const Navbar = () => {
         <Container>
             <H1>The Dojo Blog</H1>
             <Links>
-                <AA href="/">Home</AA>
-                <AA 
-                href="/create"
-                style={{
-                    color: 'white',
-                    backgroundColor: '#f1356d',
-                    borderRadius: '8px'
-                }}
-                >New Blog</AA>
+                <Link to="/" style={linkStyle}>Home</Link>
+                <Link 
+                to="/create"
+                style={linkStyle}
+                >New Blog</Link>
             </Links>
         </Container>
     )
