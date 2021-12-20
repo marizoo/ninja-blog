@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div``;
@@ -19,6 +20,10 @@ margin-bottom: 8px;
 }
 `;
 
+const linkStyle = {
+    textDecoration: 'none',
+}
+
 
 const BlogList = ({blogs, title}) => {
     return (
@@ -26,8 +31,11 @@ const BlogList = ({blogs, title}) => {
             <h2>{title}</h2>
             {blogs.map( blog => (
                 <BlogPreview key={blog.id}>
-                    <h2>{blog.title}</h2>
-                    <p>Written by {blog.author}</p>
+                    <Link style={linkStyle} to={`/blogs/${blog.id}`}>
+                        <h2>{blog.title}</h2>
+                        <p>Written by {blog.author}</p>
+                    </Link>
+                    
                     {/* <button onClick={ () => handleDelete(blog.id) } >delete blog</button> */}
                 </BlogPreview>
             ) )}
