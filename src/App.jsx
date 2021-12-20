@@ -5,6 +5,7 @@ import Navbar from './UI/Navbar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Create from './components/Create';
 import BlogDetails from './BlogDetails';
+import NotFound from './components/NotFound';
 
 const AppContainer = styled.div``;
 const Content = styled.div`
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<Create />} />
             <Route path="/blogs/:id" element={<BlogDetails />} />
+            <Route path="*" element={<NotFound/>} />
           </Routes>
         </Content>
       </AppContainer>
